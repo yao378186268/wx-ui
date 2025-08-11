@@ -12,7 +12,6 @@ export default defineConfig({
     // 生成类型声明文件（.d.ts）
     dts({
       include: ['src/**/*', 'types.ts', 'index.ts'], // 包含需要生成类型的文件
-      outDir: 'dist/types', // 类型文件输出目录
       insertTypesEntry: true, // 生成入口类型文件
     }),
     // 自动导入
@@ -59,19 +58,29 @@ export default defineConfig({
       name: 'WxUi',
       // 输出文件名格式（支持 es、umd 等）
       fileName: (format) => `wx-ui.${format}.js`,
-      formats: ['es', 'umd'], // 同时输出 ESM（用于现代项目）和 UMD（用于传统项目）
     },
     // 处理外部依赖（避免打包 Vue、Element Plus 等）
     rollupOptions: {
       external: ['vue', 'element-plus'], // 这些依赖由用户项目提供
-      output: {
-        // 为外部依赖提供全局变量映射（UMD 模式需要）
-        globals: {
-          vue: 'Vue',
-          'element-plus': 'ElementPlus'
+      output: [
+        {
+          // 打包格式
+          format: 'es',
+          // 输出的包文件名
+          entryFileNames: '[name].js',
+          //让打包目录和我们目录对应
+          preserveModules: true,
+          exports: 'named',
+          //配置打包根目录
+          dir: 'dist',
+          // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
+          // globals: {
+          //   antd: 'antd',
+          //   react: 'React',
+          //   'react-dom': 'ReactDOM',
+          // },
         },
-        exports: 'named'
-      },
+      ],
     },
     // 压缩代码
     minify: 'terser',
