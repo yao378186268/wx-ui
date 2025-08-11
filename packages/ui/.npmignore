@@ -1,0 +1,17 @@
+# 排除源码目录（只上传 dist）
+components/
+types/
+
+# 排除开发工具配置
+.vscode/
+.eslintrc.js
+.prettierrc
+vite.config.ts
+tsconfig.json
+
+.eslintrc-auto-import.json
+
+# 排除其他无关文件
+node_modules/
+pnpm-lock.yaml
+.gitignore

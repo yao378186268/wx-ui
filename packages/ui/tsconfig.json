@@ -1,0 +1,17 @@
+{
+  "extends": "@wx/typescript-config/nextjs.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "dist/types",
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "next-env.d.ts",
+    "next.config.js",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
