@@ -42,13 +42,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install  # 使用 pnpm 安装依赖
 
-       # 关键步骤1：先构建@wx/ui组件库
-      - name: Build @wx/ui
-        run: pnpm run build --filter=@wx/ui
+       # 关键步骤1：先构建@sz-cis/ui组件库
+      - name: Build @sz-cis/ui
+        run: pnpm run build --filter=@sz-cis/ui
 
       # 关键步骤2：确保 Turborepo 正确构建 docs 项目
       - name: Build with Turborepo
-        run: pnpm run build --filter=@wx/docs  # 替换为你的 docs 项目包名
+        run: pnpm run build --filter=@sz-cis/docs  # 替换为你的 docs 项目包名
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

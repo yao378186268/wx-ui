@@ -1,5 +1,5 @@
 {
-  "name": "@wx/docs",
+  "name": "@sz-cis/docs",
   "version": "0.1.0",
   "type": "module",
   "scripts": {
@@ -8,7 +8,7 @@
     "preview": "vitepress preview"
   },
   "devDependencies": {
-    "@wx/ui": "workspace:*",
+    "@sz-cis/ui": "workspace:*",
     "vitepress": "^1.0.0-rc.31",
     "vitepress-demo-plugin": "^1.4.7"
   }

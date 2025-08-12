@@ -1,5 +1,5 @@
 {
-  "name": "wx-ui",
+  "name": "@sz-cis",
   "private": true,
   "scripts": {
     "build": "turbo run build",
