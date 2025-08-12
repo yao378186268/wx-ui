@@ -33,7 +33,7 @@ export default defineConfig({
     // 站点基本信息
     title: 'WX组件库',
     description: '基于 Element Plus 的二次封装组件库',
-    base: '/',
+    base: '/wx-ui',
     head: [['link', { rel: 'icon', href: '/images/vitepress-logo-mini.svg' }]],
 
     // 主题配置
