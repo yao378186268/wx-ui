@@ -21,7 +21,7 @@ const WxUiResolver = (): {
                 const componentName = name.replace(newPrefix, '')
                 // 返回组件路径（根据你的实际目录结构调整）
                 return {
-                    from: '@wx/ui', // 你的 UI 组件库包名
+                    from: '@sz-cis/ui', // 你的 UI 组件库包名
                     name: componentName // 组件在库中的导出名称
                 };
             }
@@ -67,7 +67,7 @@ export default defineConfig({
         resolve: {
             // 确保能正确解析组件库
             alias: [
-                // { find: '@wx/ui', replacement: '../../../packages/components' }
+                // { find: '@sz-cis/ui', replacement: '../../../packages/components' }
             ]
         },
         plugins: [

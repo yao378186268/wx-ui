@@ -1,9 +1,9 @@
 import DefaultTheme from 'vitepress/theme'
 import type { App } from 'vue'
 // 导入你的组件库
-// import { createWxUi } from '@wx/ui'
+// import { createWxUi } from '@sz-cis/ui'
 // 导入组件库样式（如果有的话）
-// import '@wx/ui/dist/style.css'
+// import '@sz-cis/ui/dist/style.css'
 // element plus 组件库
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'

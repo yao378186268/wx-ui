@@ -36,7 +36,7 @@ importers:
 
   apps/docs:
     devDependencies:
-      '@wx/ui':
+      '@sz-cis/ui':
         specifier: workspace:*
         version: link:../../packages/ui
       vitepress:
@@ -102,7 +102,7 @@ importers:
       '@vue/tsconfig':
         specifier: ^0.7.0
         version: 0.7.0(typescript@5.8.3)(vue@3.5.18(typescript@5.8.3))
-      '@wx/typescript-config':
+      '@sz-cis/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       sass-embedded:
