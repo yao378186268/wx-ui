@@ -1,0 +1,54 @@
+{
+  "name": "@sz-cis/vue-hooks",
+  "version": "0.1.0",
+  "description": "Vue 3 公共 hooks 库",
+  "author": "wx-ycc",
+  "license": "MIT",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "prepublishOnly": "pnpm build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "hooks",
+    "composition-api"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yao378186268/wx-ui"
+  },
+  "peerDependencies": {
+    "@vue/runtime-core": "^3.3.0",
+    "vue": "^3.3.0"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": false
+    }
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.9.0",
+    "vue": "^3.5.18"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/tsconfig": "^0.7.0",
+    "@sz-cis/typescript-config": "workspace:*",
+    "typescript": "~5.8.3",
+    "vite": "^7.1.0",
+    "vite-plugin-dts": "^4.5.4",
+    "vue-tsc": "^3.0.5"
+  }
+}

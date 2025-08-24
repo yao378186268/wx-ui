@@ -1,11 +1,21 @@
+/*
+ * @Author: 姚成成
+ * @Date: 2025-08-11 16:20:02
+ * @FilePath: /wx-ui/apps/docs/.vitepress/config.ts
+ * @LastEditTime: 2025-08-24 15:04:10
+ * 
+ * Copyright (c) 2025 by 用户/公司名, All Rights Reserved. 
+ * @Description: 
+ * @LastEditors: 姚成成
+ */
 import { defineConfig } from 'vitepress'
 import { vitepressDemoPlugin } from 'vitepress-demo-plugin'
-import AutoImport from 'unplugin-auto-import/vite'
+// import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+// import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { prefix } from '../config/index'
 
-const newPrefix = prefix[0].toLocaleUpperCase() + prefix[1]
+const newPrefix = prefix[0]!.toLocaleUpperCase() + prefix[1]
 
 //  UI 组件库自动导入
 const WxUiResolver = (): {
@@ -21,7 +31,7 @@ const WxUiResolver = (): {
                 const componentName = name.replace(newPrefix, '')
                 // 返回组件路径（根据你的实际目录结构调整）
                 return {
-                    from: '@sz-cis/ui', // 你的 UI 组件库包名
+                    from: '@sz-cis/vue-ui', // 你的 UI 组件库包名
                     name: componentName // 组件在库中的导出名称
                 };
             }
@@ -40,7 +50,8 @@ export default defineConfig({
     themeConfig: {
         nav: [
             { text: '首页', link: '/' },
-            { text: '组件', link: '/components/Button/' }
+            { text: '组件', link: '/components/Button/' },
+            { text: 'hooks', link: '/hooks/useCounter/' },
         ],
         sidebar: {
             '/components/': [
@@ -51,7 +62,22 @@ export default defineConfig({
                         // 其他组件...
                     ]
                 }
-            ]
+            ],
+            '/hooks/': [
+                {
+                    text: '内置hooks',
+                    items: [
+                        { text: 'useCounter', link: '/hooks/useCounter/' },
+                        { text: 'useToggle', link: '/hooks/useToggle/' },
+                    ]
+                },
+                {
+                    text: 'VueUse示例',
+                    items: [
+                        { text: 'useFocus', link: '/hooks/useFocus/' },
+                    ]
+                }
+            ],
         }
     },
 
@@ -72,25 +98,25 @@ export default defineConfig({
         },
         plugins: [
             // 自动导入
-            AutoImport({
-                imports: ['vue', 'vue-router', 'pinia'],
-                resolvers: [
-                    ElementPlusResolver(),
-                ],
-                dts: 'types/auto-imports.d.ts',
-                eslintrc: {
-                    enabled: true, // 启用 ESLint 支持
-                    filepath: './.eslintrc-auto-import.json', // 生成的配置文件路径
-                    globalsPropValue: true, // 全局变量属性值
-                },
-            }) as any,
+            // AutoImport({
+            //     imports: ['vue', 'vue-router', 'pinia'],
+            //     resolvers: [
+            //         ElementPlusResolver(),
+            //     ],
+            //     dts: 'types/auto-imports.d.ts',
+            //     eslintrc: {
+            //         enabled: true, // 启用 ESLint 支持
+            //         filepath: './.eslintrc-auto-import.json', // 生成的配置文件路径
+            //         globalsPropValue: true, // 全局变量属性值
+            //     },
+            // }) as any,
             Components({
                 resolvers: [
-                    ElementPlusResolver(), // 保留 Element Plus 解析器
+                    // ElementPlusResolver(), // 保留 Element Plus 解析器
                     WxUiResolver() // 添加自定义 UI 组件解析器
                 ],
                 dts: 'types/components.d.ts', // 自动生成类型声明文件
-            })
-        ]
+            }) as any
+        ],
     }
 })

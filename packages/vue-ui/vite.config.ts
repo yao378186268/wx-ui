@@ -1,3 +1,13 @@
+/*
+ * @Author: 姚成成
+ * @Date: 2025-05-27 11:03:08
+ * @FilePath: /wx-ui/packages/ui/vite.config.ts
+ * @LastEditTime: 2025-08-24 12:52:43
+ * 
+ * Copyright (c) 2025 by 用户/公司名, All Rights Reserved. 
+ * @Description: 
+ * @LastEditors: 姚成成
+ */
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import path from 'path';
@@ -74,11 +84,11 @@ export default defineConfig({
           //配置打包根目录
           dir: 'dist',
           // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
-          // globals: {
-          //   antd: 'antd',
-          //   react: 'React',
-          //   'react-dom': 'ReactDOM',
-          // },
+          globals: {
+            antd: 'antd',
+            react: 'React',
+            'react-dom': 'ReactDOM',
+          },
         },
       ],
     },

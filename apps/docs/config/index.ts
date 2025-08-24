@@ -1,2 +1,2 @@
 // 组件前缀
-export const prefix = 'sr'
+export const prefix: string = 'sr'

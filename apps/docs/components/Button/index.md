@@ -1,3 +1,13 @@
+<!--
+ * @Author: 姚成成
+ * @Date: 2025-08-11 16:19:44
+ * @FilePath: /wx-ui/apps/docs/components/Button/index.md
+ * @LastEditTime: 2025-08-24 14:46:05
+ * 
+ * Copyright (c) 2025 by 用户/公司名, All Rights Reserved. 
+ * @Description: 
+ * @LastEditors: 姚成成
+-->
 # Button 按钮
 
 ## 介绍
@@ -10,7 +20,7 @@
 
 ## 尺寸大小
 
-<demo vue="./demo/basic.vue" />
+<demo vue="./demo/size.vue" />
 
 ## Props 属性
 

@@ -15,6 +15,9 @@ hero:
         - theme: alt
           text: 公共组件
           link: /components/Button/
+        - theme: alt
+          text: hooks
+          link: /hooks/useCounter/
 features:
     - icon: 📖
       title: 需求规格

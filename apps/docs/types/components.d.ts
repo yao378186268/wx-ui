@@ -8,6 +8,6 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    SrButton: typeof import('@sz-cis/ui')['Button']
+    SrButton: typeof import('@sz-cis/vue-ui')['Button']
   }
 }
