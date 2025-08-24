@@ -42,11 +42,15 @@ jobs:
       - name: Install dependencies
         run: pnpm install  # 使用 pnpm 安装依赖
 
-       # 关键步骤1：先构建@sz-cis/ui组件库
-      - name: Build @sz-cis/ui
-        run: pnpm run build --filter=@sz-cis/ui
+       # 关键步骤1：先构建@sz-cis/vue-ui组件库
+      - name: Build @sz-cis/vue-ui
+        run: pnpm run build --filter=@sz-cis/vue-ui
 
-      # 关键步骤2：确保 Turborepo 正确构建 docs 项目
+       # 关键步骤2：先构建@sz-cis/vue-hooks
+      - name: Build @sz-cis/vue-hooks
+        run: pnpm run build --filter=@sz-cis/vue-hooks
+
+      # 关键步骤3：确保 Turborepo 正确构建 docs 项目
       - name: Build with Turborepo
         run: pnpm run build --filter=@sz-cis/docs  # 替换为你的 docs 项目包名
 
